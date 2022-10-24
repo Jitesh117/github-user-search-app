@@ -24,6 +24,13 @@
   --secondry-text-color-dark: #fff;
   --secondry-heading-color-dark: #fff;
 }
+.bold {
+  color: var(--secondry-heading-color-dark);
+  font-weight: bold;
+}
+.logo{
+  color: var(--logo-color-dark);
+}
 body {
   background-color: var(--body-bg-color-dark);
 }
@@ -41,6 +48,9 @@ main {
   align-items: center;
   justify-content: space-between;
 }
+.mode:hover{
+  cursor: pointer;
+}
 .mode span {
   margin-right: 10px;
   font-weight: bold;
@@ -53,7 +63,7 @@ nav {
 }
 a {
   text-decoration: none;
-  color: white;
+  color: var(--secondry-text-color-dark);
 }
 .search {
   background-color: var(--inner-bg-color-dark);
@@ -63,6 +73,7 @@ a {
   border-radius: 10px;
   margin-top: 10px;
   align-items: center;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .query {
   display: flex;
@@ -77,7 +88,7 @@ a {
 }
 .search input {
   font-size: 0.6rem;
-  color: white;
+  color: var(--secondry-text-color-dark);
   width: 100%;
   background-color: var(--inner-bg-color-dark);
   border: none;
@@ -99,6 +110,10 @@ button {
   background-color: var(--inner-bg-color-dark);
   padding: 20px 10px;
   border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#username{
+  color: var(--btn-primary-bg);
 }
 .about {
   display: flex;
@@ -116,7 +131,7 @@ button {
 @media screen and (max-width: 376px) {
   main {
     width: 90%;
-    color: white;
+    color: var(--secondry-text-color-dark);
     font-size: 0.6rem;
   }
   h2 {
@@ -144,7 +159,7 @@ button {
     width: calc(100%-40px);
     border-radius: 5px;
     background-color: var(--body-bg-color-dark);
-    color: white;
+    color: var(--secondry-text-color-dark);
   }
   .gitlinks {
     display: flex;
@@ -168,7 +183,7 @@ button {
   main {
     width: 90%;
     max-width: 500px;
-    color: white;
+    color: var(--secondry-text-color-dark);
     font-size: 0.6rem;
   }
   h2 {
@@ -195,7 +210,7 @@ button {
     width: calc(100%-40px);
     border-radius: 5px;
     background-color: var(--body-bg-color-dark);
-    color: white;
+    color: var(--secondry-text-color-dark);
   }
   .gitlinks {
     display: flex;

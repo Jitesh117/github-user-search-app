@@ -18,7 +18,7 @@ function generateProfile(profile) {
   const following = document.querySelector(".following");
 
   pfp.src = profile.avatar_url;
-  username.innerHTML = profile.login;
+  username.innerHTML = `@${profile.login}`;
   rname.innerHTML = profile.name;
   if (profile.bio == null) biod.textContent = "This profile has no bio";
   biod.textContent = profile.bio;
@@ -27,7 +27,7 @@ function generateProfile(profile) {
   url.innerHTML = profile.blog;
   if (profile.twitter_username == null) twt.innerHTML = "Not a available";
   twt.innerHTML = profile.twitter_username;
-  if (profile.company == 'null') org.innerHTML = 'No company';
+  if (profile.company == "null") org.innerHTML = "No company";
   org.innerHTML = profile.company;
   repos.innerHTML = profile.public_repos;
   followers.innerHTML = profile.followers;
@@ -35,8 +35,50 @@ function generateProfile(profile) {
 }
 
 const fetchuser = async () => {
-  const username = document.querySelector('.searchinput').value;
- const user = await fetch(`https://api.github.com/users/${username}`);
+  const username = document.querySelector(".searchinput").value;
+  const user = await fetch(`https://api.github.com/users/${username}`);
   const profile = await user.json();
   generateProfile(profile);
+};
+var n = 1;
+function changetheme() {
+  if (n % 2 == 1) {
+    n++;
+    document
+      .querySelector(":root")
+      .style.setProperty("--body-bg-color-dark", "#f6f8ff");
+    document
+      .querySelector(":root")
+      .style.setProperty("--inner-bg-color-dark", "#fefefe");
+    document
+      .querySelector(":root")
+      .style.setProperty("--logo-color-dark", "#222731");
+    document
+      .querySelector(":root")
+      .style.setProperty("--secondry-text-color-dark", "#697c9a");
+    document
+      .querySelector(":root")
+      .style.setProperty("--secondry-heading-color-dark", "#2b3442");
+    document.querySelector(".modechange").src = "./images/icon-moon.svg";
+    document.querySelector('.light').innerHTML = "DARK";
+  } else {
+    n++;
+    document
+      .querySelector(":root")
+      .style.setProperty("--body-bg-color-dark", "#141d2f");
+    document
+      .querySelector(":root")
+      .style.setProperty("--inner-bg-color-dark", "#1e2a47");
+    document
+      .querySelector(":root")
+      .style.setProperty("--logo-color-dark", "#fff");
+    document
+      .querySelector(":root")
+      .style.setProperty("--secondry-text-color-dark", "#fff");
+    document
+      .querySelector(":root")
+      .style.setProperty("--secondry-heading-color-dark", "#fff");
+    document.querySelector(".modechange").src = "./images/icon-sun.svg";
+    document.querySelector('.light').innerHTML = "LIGHT";
+  }
 }
