@@ -22,7 +22,7 @@ function generateProfile(profile) {
   rname.innerHTML = profile.name;
   if (profile.bio == null) biod.textContent = "This profile has no bio";
   biod.textContent = profile.bio;
-  // joined.innerHTML = profile.created_at;
+  joined.innerHTML = profile.created_at.slice(0,10);
   loc.textContent = profile.location;
   url.innerHTML = profile.blog;
   if (profile.twitter_username == null) twt.innerHTML = "Not a available";
