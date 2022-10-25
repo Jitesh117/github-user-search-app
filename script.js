@@ -21,14 +21,14 @@ function generateProfile(profile) {
   username.innerHTML = `@${profile.login}`;
   rname.innerHTML = profile.name;
   if (profile.bio == null) biod.textContent = "This profile has no bio";
-  biod.textContent = profile.bio;
-  joined.innerHTML = profile.created_at.slice(0,10);
+  else biod.textContent = profile.bio;
+  joined.innerHTML = profile.created_at.slice(0, 10);
   loc.textContent = profile.location;
   url.innerHTML = profile.blog;
-  if (profile.twitter_username == null) twt.innerHTML = "Not a available";
-  twt.innerHTML = profile.twitter_username;
-  if (profile.company == "null") org.innerHTML = "No company";
-  org.innerHTML = profile.company;
+  if (profile.twitter_username == null) twt.innerHTML = "Not available";
+  else twt.innerHTML = profile.twitter_username;
+  if (profile.company == null) org.innerHTML = "Not available";
+  else org.innerHTML = profile.company;
   repos.innerHTML = profile.public_repos;
   followers.innerHTML = profile.followers;
   following.innerHTML = profile.following;
@@ -60,7 +60,7 @@ function changetheme() {
       .querySelector(":root")
       .style.setProperty("--secondry-heading-color-dark", "#2b3442");
     document.querySelector(".modechange").src = "./images/icon-moon.svg";
-    document.querySelector('.light').innerHTML = "DARK";
+    document.querySelector(".light").innerHTML = "DARK";
   } else {
     n++;
     document
@@ -79,6 +79,6 @@ function changetheme() {
       .querySelector(":root")
       .style.setProperty("--secondry-heading-color-dark", "#fff");
     document.querySelector(".modechange").src = "./images/icon-sun.svg";
-    document.querySelector('.light').innerHTML = "LIGHT";
+    document.querySelector(".light").innerHTML = "LIGHT";
   }
 }
