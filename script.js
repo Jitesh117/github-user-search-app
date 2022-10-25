@@ -24,7 +24,8 @@ function generateProfile(profile) {
   else biod.textContent = profile.bio;
   joined.innerHTML = profile.created_at.slice(0, 10);
   loc.textContent = profile.location;
-  url.innerHTML = profile.blog;
+  if (profile.blog == "") url.innerHTML = "Not available";
+  else url.innerHTML = profile.blog;
   if (profile.twitter_username == null) twt.innerHTML = "Not available";
   else twt.innerHTML = profile.twitter_username;
   if (profile.company == null) org.innerHTML = "Not available";
